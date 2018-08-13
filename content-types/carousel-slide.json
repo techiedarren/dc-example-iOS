@@ -94,8 +94,6 @@
             "maxLength": 150
         }
     },
-    "required": [
-    ],
     "additionalProperties": false,
     "propertyOrder": [
         "_title",
