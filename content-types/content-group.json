@@ -1,0 +1,47 @@
+{
+    "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
+    "id": "https://raw.githubusercontent.com/techiedarren/dc-example-iOS/master/content-types/content-group.json",
+    "allOf": [
+        {
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+        }
+    ],
+    "title": "Content Group",
+    "description": "",
+    "type": "object",
+    "properties": {
+        "Carousel": {
+            "type": "array",
+            "items": {
+                "allOf": [
+                    {
+                        "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                    },
+                    {
+                        "properties": {
+                            "contentType": {
+                                "enum": [
+                                    "https://raw.githubusercontent.com/techiedarren/dc-example-iOS/master/content-types/carousel.json",
+                                    "https://raw.githubusercontent.com/techiedarren/dc-example-iOS/master/content-types/collection.json"
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "minItems": 1,
+            "title": "Carousel",
+            "description": ""
+        },
+        "_title": {
+            "type": "string",
+            "title": "Title",
+            "minLength": 0,
+            "maxLength": 150
+        }
+    },
+    "propertyOrder": [
+        "_title",
+        "Carousel"
+    ]
+}

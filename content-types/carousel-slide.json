@@ -1,0 +1,121 @@
+{
+    "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
+    "id": "https://raw.githubusercontent.com/techiedarren/dc-example-iOS/master/content-types/carousel-slide.json",
+    "allOf": [
+        {
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+        }
+    ],
+    "title": "Carousel Slide",
+    "description": "Can be used for banner content or slide in a carousel",
+    "type": "object",
+    "properties": {
+        "headline": {
+            "type": "string",
+            "maxLength": 50,
+            "title": "Headline",
+            "description": "Headline text with max lengh of 50 characters."
+        },
+        "strapline": {
+            "type": "string",
+            "maxLength": 255,
+            "title": "Strapline",
+            "description": "Add strapline text, max characters 255."
+        },
+        "textColour": {
+            "type": "string",
+            "title": "Text Colour",
+            "description": "Preferred Text Colour to improve visibility on background"
+        },
+        "textAlignmentHorizontal": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "Left",
+                    "Centre",
+                    "Right"
+                ]
+            },
+            "title": "Text Alignment - Horizontal",
+            "description": "Please select horizontal alignment for text"
+        },
+        "textAlignmentVertical": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "Top",
+                    "Centre",
+                    "Bottom"
+                ]
+            },
+            "title": "Text Alignment - Vertical",
+            "description": "Please select horizontal alignment for text"
+        },
+        "callToActionLabel": {
+            "type": "string",
+            "maxLength": 120,
+            "title": "Call to Action Label",
+            "description": "The text you would like to be displayed in the call to action"
+        },
+        "callToActionLinkSku": {
+            "type": "string",
+            "maxLength": 2048,
+            "title": "Call to Action Link or SKU",
+            "description": "The SKU of the product you would like the call to action to link to",
+            "format": "symbol"
+        },
+        "backgroundImage": {
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                }
+            ],
+            "title": "Background Image",
+            "description": "Image shown in the background of the banner"
+        },
+        "backgroundImageAltText": {
+            "type": "string",
+            "maxLength": 120,
+            "title": "Alt Text for background Image",
+            "description": "the alt-text you would like to be displayed for image for screen readers"
+        },
+        "backgroundImageLink": {
+            "type": "string",
+            "maxLength": 2048,
+            "minLength": 5,
+            "format": "uri",
+            "title": "Background Image link",
+            "description": "The URL of the link for the background image - with a max length and a min length",
+            "errors": {
+                "maxLength": "must be in uri format",
+                "minLength": "must be in uri format"
+            }
+        },
+        "_title": {
+            "type": "string",
+            "title": "Title",
+            "minLength": 0,
+            "maxLength": 150
+        }
+    },
+    "required": [
+        "backgroundImage"
+    ],
+    "additionalProperties": false,
+    "propertyOrder": [
+        "_title",
+        "headline",
+        "strapline",
+        "textColour",
+        "textAlignmentHorizontal",
+        "textAlignmentVertical",
+        "callToActionLabel",
+        "callToActionLinkSku",
+        "backgroundImage",
+        "backgroundImageAltText",
+        "backgroundImageLink"
+    ]
+}

@@ -1,0 +1,58 @@
+{
+    "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
+    "id": "https://raw.githubusercontent.com/techiedarren/dc-example-iOS/master/content-types/carousel.json",
+    "allOf": [
+        {
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+        }
+    ],
+    "title": "Carousel",
+    "description": "Carousel containing CustDay Carousel Slide(s)",
+    "type": "object",
+    "properties": {
+        "heading": {
+            "type": "string",
+            "maxLength": 50,
+            "title": "Carousel Heading",
+            "description": "Carousel heading text with a max length of 50 characters"
+        },
+        "slides": {
+            "type": "array",
+            "items": {
+                "allOf": [
+                    {
+                        "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                    },
+                    {
+                        "properties": {
+                            "contentType": {
+                                "enum": [
+                                    "https://raw.githubusercontent.com/techiedarren/dc-example-iOS/master/content-types/carousel-slide.json"
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "minItems": 1,
+            "maxItems": 10,
+            "title": "Carousel Slides",
+            "description": "Select content slides to include in your carousel, minimum of 1 and maximum of 10."
+        },
+        "_title": {
+            "type": "string",
+            "title": "Title",
+            "minLength": 0,
+            "maxLength": 150
+        }
+    },
+    "required": [
+        "slides"
+    ],
+    "additionalProperties": false,
+    "propertyOrder": [
+        "_title",
+        "heading",
+        "slides"
+    ]
+}

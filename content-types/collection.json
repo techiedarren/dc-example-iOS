@@ -1,0 +1,113 @@
+{
+    "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
+    "id": "https://raw.githubusercontent.com/techiedarren/dc-example-iOS/master/content-types/collection.json",
+    "allOf": [
+        {
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+        }
+    ],
+    "title": "Collection",
+    "description": "",
+    "type": "object",
+    "properties": {
+        "titleText": {
+            "type": "string",
+            "maxLength": 50,
+            "title": "Title text",
+            "description": "Title text with max lengh of 50 characters."
+        },
+        "description": {
+            "type": "string",
+            "maxLength": 2000,
+            "title": "Description",
+            "description": ""
+        },
+        "textColour": {
+            "type": "string",
+            "maxLength": 120,
+            "title": "Text Colour Hint",
+            "description": ""
+        },
+        "callToActionLabel": {
+            "type": "string",
+            "maxLength": 120,
+            "title": "Call to Action Label",
+            "description": "The text you would like to be displayed in the call to action"
+        },
+        "callToActionLinkSku": {
+            "type": "string",
+            "maxLength": 2048,
+            "title": "Call to Action Link or SKU",
+            "description": "The SKU of the product you would like the call to action to link to",
+            "format": "symbol"
+        },
+        "backgroundImage": {
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                }
+            ],
+            "title": "Background Image",
+            "description": "Image shown in the background"
+        },
+        "backgroundImageAltText": {
+            "type": "string",
+            "maxLength": 120,
+            "title": "Alt Text for background Image",
+            "description": ""
+        },
+        "backgroundColour": {
+            "type": "string",
+            "maxLength": 120,
+            "title": "Background Colour",
+            "description": ""
+        },
+        "backgroundImageLink": {
+            "type": "string",
+            "maxLength": 2048,
+            "minLength": 5,
+            "format": "uri",
+            "title": "Background Image link",
+            "description": "The URL of the link for the background image - with a max length and a min length",
+            "errors": {
+                "maxLength": "must be in uri format",
+                "minLength": "must be in uri format"
+            }
+        },
+        "skus": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "maxLength": 100
+            },
+            "minItems": 0,
+            "maxItems": 10,
+            "title": "SKUs",
+            "description": "a list of SKUs"
+        },
+        "_title": {
+            "type": "string",
+            "title": "Title",
+            "minLength": 0,
+            "maxLength": 150
+        }
+    },
+    "required": [
+        "backgroundImage"
+    ],
+    "additionalProperties": false,
+    "propertyOrder": [
+        "_title",
+        "titleText",
+        "description",
+        "textColour",
+        "callToActionLabel",
+        "callToActionLinkSku",
+        "backgroundImage",
+        "backgroundImageAltText",
+        "backgroundColour",
+        "backgroundImageLink",
+        "skus"
+    ]
+}
