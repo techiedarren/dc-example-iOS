@@ -49,7 +49,6 @@
     "required": [
         "slides"
     ],
-    "additionalProperties": false,
     "propertyOrder": [
         "_title",
         "heading",

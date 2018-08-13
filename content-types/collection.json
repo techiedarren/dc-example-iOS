@@ -96,7 +96,6 @@
     "required": [
         "backgroundImage"
     ],
-    "additionalProperties": false,
     "propertyOrder": [
         "_title",
         "titleText",
