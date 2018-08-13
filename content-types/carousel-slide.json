@@ -95,7 +95,6 @@
         }
     },
     "required": [
-        "backgroundImage"
     ],
     "additionalProperties": false,
     "propertyOrder": [
