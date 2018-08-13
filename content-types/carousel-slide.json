@@ -67,14 +67,7 @@
             "format": "symbol"
         },
         "backgroundImage": {
-            "type": "object",
-            "allOf": [
-                {
-                    "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
-                }
-            ],
-            "title": "Background Image",
-            "description": "Image shown in the background of the banner"
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
         },
         "backgroundImageAltText": {
             "type": "string",
